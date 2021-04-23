@@ -8,7 +8,38 @@
 /**
  * @see https://obfuscator.io - For settings
  */
-const settingsFromWeb = {
+const settingsFromWebHigh = {
+  compact: true,
+  controlFlowFlattening: true,
+  controlFlowFlatteningThreshold: 1,
+  deadCodeInjection: true,
+  deadCodeInjectionThreshold: 1,
+  debugProtection: true,
+  debugProtectionInterval: true,
+  disableConsoleOutput: true,
+  identifierNamesGenerator: 'hexadecimal',
+  log: false,
+  numbersToExpressions: true,
+  renameGlobals: false,
+  rotateStringArray: true,
+  selfDefending: true,
+  shuffleStringArray: true,
+  simplify: true,
+  splitStrings: true,
+  splitStringsChunkLength: 5,
+  stringArray: true,
+  stringArrayEncoding: ['rc4'],
+  stringArrayIndexShift: true,
+  stringArrayWrappersCount: 5,
+  stringArrayWrappersChainedCalls: true,
+  stringArrayWrappersParametersMaxCount: 5,
+  stringArrayWrappersType: 'function',
+  stringArrayThreshold: 1,
+  transformObjectKeys: true,
+  unicodeEscapeSequence: false,
+};
+
+const settingsFromWebMedium = {
   compact: true,
   controlFlowFlattening: true,
   controlFlowFlatteningThreshold: 0.75,
@@ -54,7 +85,8 @@ const jsoMetroPlugin = require('obfuscator-io-metro-plugin')(
     // identifierNamesGenerator: 'hexadecimal',
     renamePropertiesMode: 'safe',
     renameProperties: true,
-    ...settingsFromWeb,
+    // ...settingsFromWebMedium,
+    ...settingsFromWebHigh,
   },
   {
     runInDev: true /* optional */,
